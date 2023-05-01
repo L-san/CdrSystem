@@ -34,7 +34,7 @@ public class CdrGenerator {
 
     private static List<CdrInstance> getCdrInstanceList(int size) {
         List<CdrInstance> cdr = Instancio.ofList(CdrInstance.class).size(size)
-                .generate(Select.field(CdrInstance::getCallType), gen -> gen.ints().min(1).max(2))
+                .generate(Select.field(CdrInstance::getCallType), gen -> gen.ints().min(1).max(2).as(x->"0"+x.toString()))
                 .generate(Select.field(CdrInstance::getPhoneNumber), gen -> gen.text().pattern("7#d#d#d#d#d#d#d#d#d#d"))
                 .generate(Select.field(CdrInstance::getEndCallDate), gen -> gen.temporal().date().past())
                 .create();

@@ -11,4 +11,9 @@ class CdrApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void t(){
+        CdrGenerator.generate();
+    }
+
 }

@@ -6,12 +6,12 @@ import java.util.Date;
 
 public class CdrInstance {
 
-    private int callType;
+    private String callType;
     private String phoneNumber;
     private Date startCallDate;
     private Date endCallDate;
 
-    public int getCallType() {
+    public String getCallType() {
         return callType;
     }
 
